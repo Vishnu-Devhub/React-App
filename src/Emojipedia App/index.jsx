@@ -1,6 +1,6 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import contents from "./components/data.jsx";
+import contents from "./components/data.js";
 import Card from "./components/cards.jsx";  
 
 function App() {
@@ -13,5 +13,5 @@ function App() {
     );
 }
 
-const root = createRoot(document.getElementById("root"));
+const root = createRoot(document.getElementById("grid-layout"));
 root.render(<App />);
