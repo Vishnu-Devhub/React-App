@@ -5,13 +5,13 @@ import Card from "./components/cards.jsx";
 
 function App() {
     return (
-        <div>
-            {contents.map((emoji, index) => {
+        <div className="grid-layout">
+            {contents.map((emoji, index) => (
                 <Card key={index} {...emoji}/>
-            })}
+            ))}
         </div>
     );
 }
 
-const root = createRoot(document.getElementById("grid-layout"));
+const root = createRoot(document.getElementById("root"));
 root.render(<App />);

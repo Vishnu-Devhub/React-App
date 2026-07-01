@@ -2,12 +2,12 @@ import React from "react";
 
 function Card(props) {
     return (
-        <div class="box">
-            <img class="avatar" src={props.url} alt="emo2" />
-            <h2 class="name">
+        <div className="box">
+            <img className="avatar" src={props.url} alt={props.name} />
+            <h2 className="name">
                 {props.name}
             </h2>
-            <p class="desc">
+            <p className="desc">
                 {props.desc}
             </p>
         </div>
