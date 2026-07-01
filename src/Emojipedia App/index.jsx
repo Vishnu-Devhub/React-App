@@ -7,8 +7,8 @@ function App() {
     return (
         <div>
             {contents.map((emoji, index) => {
-                    <Card key={index} {...emoji}/>
-                })}
+                <Card key={index} {...emoji}/>
+            })}
         </div>
     );
 }
