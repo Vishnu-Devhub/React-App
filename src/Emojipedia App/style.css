@@ -1,0 +1,89 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(7, 15, 17);
+}
+
+header {
+    padding: 10px 24px;
+    position: sticky;
+    background-color: rgb(12, 26, 29);
+    border-bottom: 1px solid rgb(51, 56, 57);
+    color: white;
+    top: 0;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.count {
+    padding: 5px 15px;
+    color: rgb(141, 150, 152);
+    border: 2px solid rgb(44, 54, 56);
+    border-radius: 20px;
+    background-color: rgb(21, 26, 27);
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+    padding: 24px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    color: rgb(60, 188, 186);
+    align-items: center;
+    padding: 25px;
+    background-color: rgb(21, 26, 27);
+    border: 1px solid rgb(44, 54, 56);
+    border-radius: 10px;
+    transition: transform 0.25s ease,
+                border-color 0.25s ease,
+                background-color 0.25s ease;
+}
+
+.avatar{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgb(7, 15, 17);
+    margin-bottom: 20px;
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.box:hover .avatar{
+    transform: scale(1.08);
+    box-shadow: 0 0 0 3px rgb(7, 15, 17), 0 10px 40px 5px rgb(60, 188, 186);
+}
+
+.box:hover{
+    transform: translateY(-8px);
+    background-color: rgb(15, 59, 57); 
+    border-color: rgb(60, 188, 186); 
+    box-shadow: 0 8px 32px 5px rgba(88, 166, 255, 0.20);
+    cursor: pointer;
+}
+
+.box h2{
+    color: white;
+    margin-bottom: 15px; 
+}
+
+.box p{
+    color: rgb(141, 150, 152);
+}
