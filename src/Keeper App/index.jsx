@@ -1,14 +1,18 @@
 import React, {useState} from "react";
 import {createRoot} from "react-dom/client";
-import Header from "./components/header";
-import Note from "./components/note";
-import Footer from "./components/footer";
+import Note from "./components/note.jsx";
+import Footer from "./components/footer.jsx";
+import notes from "./components/notes-data.js"
 
 function App() {
     return (
         <div>
-            <Header />
-            <Note />
+            <header>
+                <h1>Keeper</h1>
+            </header>
+            {notes.map((note) => (
+                <Note key={note.id} heading={note.heading} content={note.content} />
+            ))}
             <Footer />
         </div>
     );
