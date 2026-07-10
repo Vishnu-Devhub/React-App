@@ -1,29 +1,35 @@
-import React from "react";                          // ✅ no unused useState
-import { useState, useEffect } from "react";        // ✅ useEffect added
+import React, { useState, useEffect } from "react";
 import { createRoot } from "react-dom/client"; 
 import Note from "./components/note.jsx";
 import Footer from "./components/footer.jsx";
-import notes from "./components/notes-data.js";
+// import notes from "./components/notes-data.js";
 
 function App() {
+    const [notes, setNotes] = useState([]);
     const [newHeading, setNewHeading] = useState("");
     const [newContent, setNewContent] = useState("");
 
-    function newNote(e) {
-        console.log("New Note Creating...");
-        if(e.target === "headingInput"){
-            setNewHeading(e.target.value);
-        }else {
-            setNewContent(e.target.value);
-        }
-    };
+    function handleAdd() {
+        if(newHeading.trim() === "" || newContent.trim() === "") return;
+
+        const newNote = {
+            id: Date.now(),
+            heading: newHeading,
+            content: newContent
+        };
+
+        setNotes(prevNotes => [...prevNotes, newNote]);
+
+        setNewHeading("");
+        setNewContent("");
+    }
 
     return (
         <div className= "main-layout">
             <div className= "input-container">
-                <input className="headingInput" placeholder="Note Heading:"/>
-                <input className="contentInput" type="paragraph" placeholder="Note Content:"/>
-                <button className="add-button" onClick = {newNote}>Add</button>
+                <input className="headingInput" placeholder="Note Heading:" value={newHeading} onChange={(e) => setNewHeading(e.target.value)}/>
+                <textarea className="contentInput" placeholder="Note Content:" value={newContent} onChange={(e) => setNewContent(e.target.value)}/>
+                <button className="add-button" onClick = {handleAdd}>Add</button>
             </div>
             <div className= "grid-layout">
                 {notes.map((note) => (
