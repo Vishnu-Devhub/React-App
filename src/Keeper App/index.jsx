@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import { createRoot } from "react-dom/client"; 
 import Note from "./components/note.jsx";
 import Footer from "./components/footer.jsx";
-// import notes from "./components/notes-data.js";
+import data from "./components/notes-data.js";
 
 function App() {
-    const [notes, setNotes] = useState([]);
+    const [notes, setNotes] = useState(data);
     const [newHeading, setNewHeading] = useState("");
     const [newContent, setNewContent] = useState("");
 
