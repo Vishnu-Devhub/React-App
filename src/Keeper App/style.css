@@ -5,7 +5,7 @@
 }
 
 body {
-    background: #eee;
+    background: #e6e6e6;
 }
 
 header {
@@ -47,17 +47,17 @@ header h1 {
     gap: 10px; 
     font-family: "McLaren", cursive;
     align-items: center;
-    background-color: rgb(231, 231, 231);
+    background-color: rgb(255, 255, 255);
     border-radius: 10px;
     border: 1px solid rgb(213, 213, 213);
     box-shadow: 0 8px 20px 1px #b0a791;
 }
 
 input, .contentInput {
-    width: 60%;
+    width: 75%;
     padding: 5px 16px;
     border-radius: 5px; 
-    border: 1px solid #a49777;
+    border: 2px solid #d8d8d8;
     outline: none;
     color: rgb(109, 109, 109);
     font-size: 16px; 
@@ -120,12 +120,15 @@ footer p {
 
 .note {
     background: #fff;
-    border-radius:7px;
+    border-radius: 7px;
     box-shadow: 0 2px 5px #ccc;
     padding: 10px;
     width: 240px;
+    height: 200px;           
     margin: 16px;
-    float: left;
+    display: flex;
+    flex-direction: column;
+    float: none;             
 }
 
 .note h1 {
@@ -138,6 +141,7 @@ footer p {
     margin-bottom: 10px;
     white-space: pre-wrap;
     word-wrap: break-word;
+    overflow: hidden;        
 }
 
 .grid-layout {
@@ -147,4 +151,31 @@ footer p {
     padding: 24px;
     max-width: 1500px;
     margin: auto;
+}
+
+
+.noteButtons {
+    margin-top: auto;
+    text-align: right;
+}
+
+.deleteIcon, .editIcon {
+    color: rgb(49, 0, 0);
+    margin-right: 15px;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.deleteIcon:hover {
+    color: #d32f2f;
+    transform: scale(1.15);
+}
+
+.editIcon:hover {
+    color: #1976d2;
+    transform: scale(1.15);
+}
+
+.deleteIcon:active, .editIcon:active {
+    transform: scale(0.9);
 }

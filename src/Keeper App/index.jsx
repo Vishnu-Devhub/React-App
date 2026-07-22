@@ -4,6 +4,7 @@ import Note from "./components/note.jsx";
 import Footer from "./components/footer.jsx";
 import data from "./components/notes-data.js";
 
+
 function App() {
     const [notes, setNotes] = useState(data);
     const [newHeading, setNewHeading] = useState("");
@@ -34,7 +35,8 @@ function App() {
             <div className= "grid-layout">
                 {notes.map((note) => (
                     <Note key={note.id} heading={note.heading} content={note.content} />
-                ))}
+                ))
+                }
             </div>
             <Footer />
         </div>
