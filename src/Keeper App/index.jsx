@@ -9,7 +9,6 @@ function App() {
     const [notes, setNotes] = useState(data);
     const [newHeading, setNewHeading] = useState("");
     const [newContent, setNewContent] = useState("");
-
     function handleAdd() {
         if(newHeading.trim() === "" || newContent.trim() === "") return;
 
@@ -25,6 +24,10 @@ function App() {
         setNewContent("");
     }
 
+    function handleDelete(id) {
+        setNotes(prevNotes => prevNotes.filter(note => note.id !== id));
+    }
+
     return (
         <div className= "main-layout">
             <div className= "input-container">
@@ -34,7 +37,7 @@ function App() {
             </div>
             <div className= "grid-layout">
                 {notes.map((note) => (
-                    <Note key={note.id} heading={note.heading} content={note.content} />
+                    <Note key={note.id} id={note.id} heading={note.heading} content={note.content} onDelete={handleDelete} />
                 ))
                 }
             </div>
